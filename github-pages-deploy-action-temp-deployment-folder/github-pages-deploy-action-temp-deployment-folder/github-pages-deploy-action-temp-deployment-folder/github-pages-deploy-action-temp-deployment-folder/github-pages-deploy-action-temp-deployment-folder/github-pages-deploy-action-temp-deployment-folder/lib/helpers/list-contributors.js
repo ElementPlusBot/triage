@@ -13,7 +13,7 @@ async function listContributors(
   per_page = 100
 ) {
   const { repo: repoInvoker, octokit } = context
-  const { owner, repo } = repoInvoker.call(context)
+  const { owner, repo } = repoInvoker()
 
   let { data: contributors } = await octokit.repos.listContributors({
     owner,

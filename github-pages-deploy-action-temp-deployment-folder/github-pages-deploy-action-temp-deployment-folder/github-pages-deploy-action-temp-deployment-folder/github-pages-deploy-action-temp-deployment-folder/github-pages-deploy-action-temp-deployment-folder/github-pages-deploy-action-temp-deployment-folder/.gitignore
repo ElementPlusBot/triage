@@ -17,7 +17,3 @@ coverage
 cypress/screenshots/*
 cypress/videos/*
 tmp
-
-*.pem
-!mock-cert.pem
-.env
