@@ -11,7 +11,7 @@ async function autoAssignPRAssignees(context, config) {
     const actor = context.payload.pull_request.user.login;
     const assignees = [actor, ...ensureList(config.PRAutoAssignees)];
 
-    context.log.info('Assigning to:', assignees);
+    context.log.info('Adding assignees:', assignees);
     await autoAssign(context, assignees)
   }
 }

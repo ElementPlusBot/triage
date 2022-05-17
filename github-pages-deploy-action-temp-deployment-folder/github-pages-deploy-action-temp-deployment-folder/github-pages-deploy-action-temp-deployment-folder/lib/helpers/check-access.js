@@ -13,15 +13,11 @@ async function isCollaborator(
   const { octokit } = context
   const { owner, repo } = context.repo()
 
-  try {
-    const { status } = await octokit.repos.checkCollaborator({
-      owner,
-      repo,
-      username,
-    })
-    return status === 204
-  } catch (e) {
-    context.log.info(e);
-    return false;
-  }
+  let { status } = await octokit.repos.checkCollaborator({
+    owner,
+    repo,
+    username,
+  })
+
+  return status === 204
 }
